@@ -1,6 +1,6 @@
 # Tavern_HW1
 
-						"Create_Taverntable.sql"
+						"TavernTable.sql"
 	
 	For: "Software Development Bootcamp - DB Class #1 - Homework Assignment" Miles Technologies
 	Date completed: 3/4/2019
