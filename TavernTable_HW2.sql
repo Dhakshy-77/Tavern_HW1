@@ -42,7 +42,8 @@ INSERT INTO TavernInfo (TavernName, TavernLocid,  TavernOwner, NoOfFloors)
 INSERT INTO TavernInfo (TavernName, TavernLocid,  TavernOwner, NoOfFloors)
 	VALUES ('Seven Tap-Tavern', 5, 'Phil',3);
 
-INSERT INTO TavernInfo (TavernName, TavernLocid,  TavernOwner, NoOfFloors) VALUES ('Seven Ravern', 5, 'Phil',3);
+INSERT INTO TavernInfo (TavernName, TavernLocid,  TavernOwner, NoOfFloors) 
+        VALUES ('Seven Ravern', 5, 'Phil',3);
 
 Alter table TavernInfo add TavernAddress varchar(100)
 
@@ -329,8 +330,8 @@ values(5,4,4,10,40,1);
 Created Guest table to keep track of guests- their names, notes about them, birthdays, cakedays,class and levels.
 created GuestStatus table to keep tract of gueststatus and guestid
 **/
-Drop table Guest;
-Drop table GuestStatus;
+--Drop table Guest;
+--Drop table GuestStatus;
 create table Guest (guestid int not null,guestname varchar(50) not null,notes varchar(200),birthday date not null,cakeday date,	class varchar(50) not null,
 	lev int not null,TavernID int);
 
