@@ -1,6 +1,6 @@
 /* Created for: MILES UNIVERSITY, Software Development Bootcamp- DB Class #4
    Created on : Microsoft SQL Server Management Studio 16, Version 13.0.14500.10
-   Created Dt : 3/12/19 */
+   Created Dt : 3/20/19 */
 
 /** REFERENCE: https://baldursgate.fandom.com/wiki/Classes ,
                https://www.udemy.com, 
@@ -956,7 +956,7 @@ SELECT
 */
 
 /* 9. Write a series of INSERT commands that will insert the statuses of one table into another of your choosing using SELECT statements 
-(See our lab in class - The INSERT commands should be generated). It’s ok if the data doesn’t match or make sense! :) Remember, INSERT Commands look like: INSERT INTO 
+(See our lab in class - The INSERT commands should be generated). ItÂ’s ok if the data doesnÂ’t match or make sense! :) Remember, INSERT Commands look like: INSERT INTO 
 Table1 (column1, column2) VALUES (column1, column2)      */
 /* Changed the guest table ,added class and level table so problem works with previous project version*/
 drop table test;
@@ -996,7 +996,7 @@ select * from test;
 7. Write a query that returns guests with ONLY their highest level class 
 8. Write a query that returns guests that stay within a date range. Please remember that guests can stay for more than one night AND not all of the dates they stay have to be in that range (just some of them) 
 
-9. Using the additional queries provided, take the lab’s SELECT ‘CREATE query’ and add any IDENTITY and PRIMARY KEY constraints to it. 
+9. Using the additional queries provided, take the labÂ’s SELECT Â‘CREATE queryÂ’ and add any IDENTITY and PRIMARY KEY constraints to it. 
 
  LAB 
 SELECT * from INFORMATION_SCHEMA.KEY_COLUMN_USAGE 
@@ -1083,7 +1083,7 @@ Select g.guestname, rs.DateOccupied from guest g
 join ROOMSTAY rs ON g.guestid = rs.guestid
 where rs.DateOccupied BETWEEN '2000-01-01' AND '2018-01-01'
 --------------------------------------------------------------------------------------------------------------------------------------------
-/*9. Using the additional queries provided, take the lab’s SELECT ‘CREATE query’ and add any IDENTITY and PRIMARY KEY constraints to it. */
+/*9. Using the additional queries provided, take the labÂ’s SELECT Â‘CREATE queryÂ’ and add any IDENTITY and PRIMARY KEY constraints to it. */
 
 /*SELECT CONCAT('CREATE TABLE ',TABLE_NAME, ' (') as queryPiece 
 FROM INFORMATION_SCHEMA.TABLES 
@@ -1103,7 +1103,13 @@ SELECT ')';
   
 OUTPUT: GENERATED Without column number
 
-CREATE TABLE TavernInfo(TavernID int,TavernName varchar,TavernLocid int);*/
+CREATE TABLE TavernInfo(
+TavernID int,
+TavernName varchar,
+TavernLocid int
+);
+
+*/
   
   DECLARE @PRINTMESSAGE2 nvarchar(30), @PRINTMESSAGE4 nvarchar(30), @PRINTMESSAGE3 nvarchar(30),@PRINTMESSAGE5 nvarchar(30),@PRINTMESSAGE6 nvarchar(30),
           @PRINTMESSAGE7 nvarchar(30),@PRINTMESSAGE8 nvarchar(30), @identity nvarchar(20) , @constaint nvarchar(100);
@@ -1126,10 +1132,10 @@ CREATE TABLE TavernInfo(TavernID int,TavernName varchar,TavernLocid int);*
 
 --End Of File
 /*HOMEWORK_#5
-1. Write a query to return a “report” of all users and their roles 
+1. Write a query to return a Â“reportÂ” of all users and their roles 
 2. Write a query to return all classes and the count of guests that hold those classes 
-3. Write a query that returns all guests ordered by name (ascending) and their classes and corresponding levels. Add a column that labels them beginner (lvl 1-5), intermediate (5-10) and expert (10+) for their classes (Don’t alter the table for this)
-4. Write a function that takes a level and returns a “grouping” from question 3 (e.g. 1-5, 5-10, 10+, etc)
+3. Write a query that returns all guests ordered by name (ascending) and their classes and corresponding levels. Add a column that labels them beginner (lvl 1-5), intermediate (5-10) and expert (10+) for their classes (DonÂ’t alter the table for this)
+4. Write a function that takes a level and returns a Â“groupingÂ” from question 3 (e.g. 1-5, 5-10, 10+, etc)
 5. Write a function that returns a report of all open rooms (not used) on a particular day (input) and which tavern they belong to 
 6. Modify the same function from 5 to instead return a report of prices in a range (min and max prices) - Return Rooms and their taverns based on price inputs
 7. Write a command that uses the result from 6 to Create a Room in another tavern that undercuts (is less than) the cheapest room by a
@@ -1137,7 +1143,7 @@ CREATE TABLE TavernInfo(TavernID int,TavernName varchar,TavernLocid int);*
 Nice and short ;D
 */
 
---1. Write a query to return a “report” of all users and their roles 
+--1. Write a query to return a Â“reportÂ” of all users and their roles 
 select * from Users
 select * from Roles
 Select U.UserName, U.UserId, R.RoleId, R.RoleName from Users U 
@@ -1166,7 +1172,7 @@ group by Classname
 
 Go
 --3. Write a query that returns all guests ordered by name (ascending) and their classes and corresponding levels. 
---Add a column that labels them beginner (lvl 1-5), intermediate (5-10) and expert (10+) for their classes (Don’t alter the table for this)
+--Add a column that labels them beginner (lvl 1-5), intermediate (5-10) and expert (10+) for their classes (DonÂ’t alter the table for this)
 select * from GuestStatus
 
 SELECT guestname ,Classname , guestlevel,
@@ -1198,7 +1204,7 @@ Scott	      Cleric	     12	    Expert
 Scott	      Cleric         10	    Intermediate
 #################################*/
 
---4. Write a function that takes a level and returns a “grouping” from question 3 (e.g. 1-5, 5-10, 10+, etc)
+--4. Write a function that takes a level and returns a Â“groupingÂ” from question 3 (e.g. 1-5, 5-10, 10+, etc)
 
 /*IF OBJECT_ID (N'dbo.Groupinglevel', N'FN') IS NOT NULL  
     DROP FUNCTION dbo.Groupinglevel; 
@@ -1345,7 +1351,7 @@ Write a stored procedure that takes a guest id and returns the total that guest 
 
 Write a stored procedure that takes a level and an optional argument that determines whether the procedure returns guests of that level and higher or that level and lower
 
-Write a stored procedure that deletes a Tavern ( don’t run it yet or rollback your transaction if you do )
+Write a stored procedure that deletes a Tavern ( donÂ’t run it yet or rollback your transaction if you do )
 
 Write a trigger that watches for deleted taverns and use it to remove taverns, supplies, rooms, and services tied to it
 
@@ -1417,7 +1423,7 @@ ON Guest.guestid = Level.guestid
 WHERE guestlevel >= 25
 */
 --------------------------------------------------------------------------------------------------------------
---4.Write a stored procedure that deletes a Tavern ( don’t run it yet or rollback your transaction if you do )
+--4.Write a stored procedure that deletes a Tavern ( donÂ’t run it yet or rollback your transaction if you do )
 
 Alter PROCEDURE Delete_tavern
  @TavernID int
