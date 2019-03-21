@@ -5,12 +5,11 @@
 /** REFERENCE: https://baldursgate.fandom.com/wiki/Classes ,
                https://www.udemy.com, 
                https://stackoverflow.com/questions/3156908/using-a-single-common-where-condition-for-union-in-sql
-			   https://www.w3schools.com/sql/trymysql.asp?filename=trysql_case
-			   https://stackoverflow.com/questions/21824478/reset-identity-seed-after-deleting-records-in-sql-server
+	       https://www.w3schools.com/sql/trymysql.asp?filename=trysql_case
+               https://stackoverflow.com/questions/21824478/reset-identity-seed-after-deleting-records-in-sql-server
     
-	NOTES:     Tavern is an establishment for the sale of beer and other drinks to be consumed on the premises, sometimes also serving food.
+	NOTES: Tavern is an establishment for the sale of beer and other drinks to be consumed on the premises, sometimes also serving food.
                A public house for travelers and others; inn.**/
-
 
 /** DROP DATABASE IF EXISTS TAVERNDB;
     CREATE DATABASE TavernDB;
@@ -65,7 +64,6 @@ ALTER TABLE TavernInfo ADD TavernAddress varchar(100)
 --ALTER TABLE TavernInfo ADD CONSTRAINT [PK_TavernInfo] PRIMARY KEY (TavernID);
 --ALTER TABLE Guest add foreign key (TavernID) references TavernInfo(TavernID);
 --Added values for the new column TavernAddress. Assummed 2 Taverns in the same(Mt laurel) location.
-
 
 --select * from TavernInfo;
 --DROP TABLE TavernEmp;	
@@ -201,7 +199,6 @@ GO
 GO
 */
 --select * from PurchaseOrder;
-
 --DROP TABLE PurchaseOrderDetails;
 
 CREATE TABLE PurchaseOrderDetails(
